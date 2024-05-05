@@ -1,8 +1,8 @@
 - name: config db
   hosts: db
   become: yes
-  vars:
-    login_host: db.navaneeth.cloud
+  # vars:
+  #   login_host: db.navaneeth.cloud
   tasks:
     - name : Install mysql server
       ansible.builtin.dnf:
@@ -13,12 +13,12 @@
           name: mysql
           state: started
           enabled: yes
-     #check password set already
-    - name: check db connection  
-      community.mysql.mysql_info:
-        login_user: root
-        login_password: ExpensesApp@1
-        login_host: "{{login_host}}"
-        filter: version
-      ignore_errors: yes
-      register: mysql_connection_output
+    #  #check password set already
+    # - name: check db connection  
+    #   community.mysql.mysql_info:
+    #     login_user: root
+    #     login_password: ExpensesApp@1
+    #     login_host: "{{ login_host  }}"
+    #     filter: version
+    #   ignore_errors: yes
+    #   register: mysql_connection_output

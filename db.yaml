@@ -8,8 +8,8 @@
       ansible.builtin.dnf:
        name: mysql
        state: latest
-    # - name : start  enable mysql     
-    #     ansible.builtin.service:
-    #       name: enable & start
-    #       state: started
-    #       enabled: yes
+    - name : start  enable mysql     
+      ansible.builtin.service:
+          name: enable & start
+          state: started
+          enabled: yes

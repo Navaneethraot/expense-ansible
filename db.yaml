@@ -13,3 +13,9 @@
           name: mysql
           state: started
           enabled: yes
+     #check password set already
+    - name: check db connection  
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: ExpensesApp@1
+        filter: version

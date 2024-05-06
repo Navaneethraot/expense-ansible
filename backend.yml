@@ -34,11 +34,12 @@
     ansible.builtin.unarchive:
       src: /tmp/backend.zip
       dest: /app
-      remote_src: yes    
+      remote_src: yes   
+
   - name: install npm install
     ansible.builtin.command: npm install
     orgs: 
-      chdir: app    
+      chdir: /app    
 
   - name: copy backend server
     ansible.builtin.copy:

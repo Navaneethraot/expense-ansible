@@ -23,15 +23,16 @@
     ansible.builtin.file:
      dest: /app
      state: directory
+
   - name: Download the application code to created app directory.
     ansible.builtin.get_url:
       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
       dest: temp/app
 
-  - name: Unzip backend app code
+  - name: Unzip backend code
     ansible.builtin.unarchive:
-    src: /tmp/backend.zip
-    dest: /app
+      src: /tmp/backend.zip
+      dest: /app
     
 
     

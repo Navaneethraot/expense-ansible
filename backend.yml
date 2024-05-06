@@ -38,7 +38,7 @@
 
   - name: install npm install
     ansible.builtin.command: npm install
-    orgs: 
+    args: 
       chdir: /app    
 
   - name: copy backend server

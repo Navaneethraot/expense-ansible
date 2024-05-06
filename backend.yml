@@ -12,7 +12,7 @@
   
 
   - name : install nodejs
-    ansible.builtin.command:    dnf install nodejs -y
+    ansible.builtin.dnf: dnf install nodejs -y
       name:  nodejs
       state: installed
   - name: add user expense
